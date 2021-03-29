@@ -33,7 +33,11 @@ namespace WpfSMSApp.View
             var result = await this.ShowMessageAsync("종료", "프로그램을 종료할까요?",//mahapp을 사용하기 위해서 async를 사용해주는것 mahapp 동기 형식
                          MessageDialogStyle.AffirmativeAndNegative, null);
             if (result == MessageDialogResult.Affirmative)
+            {
+                Commons.LOGGER.Info("프로그램 종료");
                 Application.Current.Shutdown();
+            }
+               
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
