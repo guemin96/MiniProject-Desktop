@@ -29,7 +29,7 @@
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="87,0">
             <Button x:Name="BtnLogin" Content="로그인" Margin="5" Width="100" Height="50" 
                     Background="RoyalBlue" Foreground="White" FontSize="14" Click="BtnLogin_Click">
-                <Button.ContentTemplate>
+                <Button.ContentTemplate> <!--템플릿!!!!!!!!!!!!!!!-->
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding}" Margin="5,0" VerticalAlignment="Center"/>
