@@ -23,7 +23,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid>
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="1*" />
@@ -44,11 +44,11 @@
 
         <!--버튼영역 시작-->
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
-            <Button x:Name="BtnEditMyCount" Content="계정정보 수정" 
+            <Button x:Name="BtnEditAccount" Content="계정정보 수정" 
                     Height="50" Margin="5,10"
                     FontSize="14"
                     Background="DarkSlateBlue" Foreground="White"
-                    Click="BtnEditMyCount_Click" >
+                    Click="BtnEditAccount_Click">
             </Button>
 
         </StackPanel>

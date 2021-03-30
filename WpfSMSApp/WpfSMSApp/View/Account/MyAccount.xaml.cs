@@ -46,9 +46,9 @@ namespace WpfSMSApp.View.Account
             }
         }
 
-        private void BtnEditMyCount_Click(object sender, RoutedEventArgs e)
+        private void BtnEditAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EditAccount());
         }
     }
 }

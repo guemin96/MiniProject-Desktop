@@ -96,7 +96,7 @@
             <Button x:Name="BtnUser" Grid.Column="5" Content="사용자"
                     FontSize="20" Foreground="White"
                     Background="LightSteelBlue"
-                    Margin="5,10">
+                    Margin="5,10" Click="BtnUser_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -134,11 +134,11 @@
             </Button>
 
         </Grid>
-        <Grid Background="WhiteSmoke">
+        <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Frame x:Name="ActiveControl"/>
+            <Frame x:Name="ActiveControl" NavigationUIVisibility="Hidden" />
             <!--화면전환이 되는 부분 원래는 frame 자리에 ContentControl-->
         </Grid>
     </DockPanel>

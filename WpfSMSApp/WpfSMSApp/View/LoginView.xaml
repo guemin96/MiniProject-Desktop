@@ -29,7 +29,7 @@
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="87,0">
             <Button x:Name="BtnLogin" Content="로그인" Margin="5" Width="100" Height="50" 
                     Background="RoyalBlue" Foreground="White" FontSize="14" Click="BtnLogin_Click">
-                <Button.ContentTemplate> <!--템플릿!!!!!!!!!!!!!!!-->
+                <Button.ContentTemplate> <!--템플릿을 사용하였기 때문에 밑에서 binding을 바로 사용했을때 바로 인식할 수 있음!!-->
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding}" Margin="5,0" VerticalAlignment="Center"/>

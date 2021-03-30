@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,19 @@ namespace WpfSMSApp.Logic
                 users = ctx.User.ToList();
             }
             return users;
+        }
+        /// <summary>
+        /// 입력, 수정 동시에....
+        /// </summary>
+        /// <returns>0또는 1이상</returns>
+        public static int SetUser(User user)
+        {
+            using (var ctx = new SMSEntities())
+            {
+                ctx.User.AddOrUpdate(user); // 인덱스값이 없는 경우에는 add 인덱스값이 있는 경우에는 update
+                return ctx.SaveChanges();// savechange?는 무슨 함수?
+            }
+           
         }
     }
 }
