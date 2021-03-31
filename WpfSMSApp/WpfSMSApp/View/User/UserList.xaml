@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:WpfSMSApp.View.User" 
     xmlns:iconpacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks" 
-    xmlns:iconpacks1="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Codicons" xmlns:iconpacks2="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
+    xmlns:iconpacks1="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Codicons" 
+    xmlns:iconpacks2="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
     mc:Ignorable="d" 
     d:DesignHeight="630" d:DesignWidth="1200"
     Title="UserList" Loaded="Page_Loaded">
@@ -17,7 +18,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Right"/>
         </Style>
-        
+
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Margin" Value="10 , 0"/>
@@ -33,12 +34,12 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="210"/>
         </Grid.ColumnDefinitions>
 
         <!--제목 입력 시작-->
-        <Label Grid.Row="0" Grid.Column="1" Content="계정 리스트" 
+        <Label Grid.Row="0" Grid.Column="1" Content="사용자리스트" 
                FontSize="30" FontWeight="ExtraBold"
                VerticalContentAlignment="Center" VerticalAlignment="Bottom" 
                HorizontalContentAlignment="Left" />
@@ -60,7 +61,7 @@
                     </DataTemplate>
                 </Button.ContentTemplate>
             </Button>
-            
+
             <Button x:Name="BtnEditUser" Content="사용자 수정" 
                     Height="50" Margin="5,5"
                     FontSize="14"
@@ -99,12 +100,25 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
-                <RadioButton Content="모두" Margin="5,0" ></RadioButton >
-                <RadioButton Content="활성" Margin="5,0"></RadioButton>
-                <RadioButton Content="비활성" Margin="5,0"></RadioButton>
-            </StackPanel>            
-            <DataGrid x:Name="GrdData" Grid.Row="1">
-                
+                <RadioButton x:Name="RdoAll" Content="모두" Margin="5,0" Checked="RdoAll_Checked" ></RadioButton >
+                <RadioButton x:Name="RdoActive" Content="활성" Margin="5,0" Checked="RdoActive_Checked"></RadioButton>
+                <RadioButton x:Name="RdoDeactive" Content="비활성" Margin="5,0" Checked="RdoDeactive_Checked"></RadioButton>
+            </StackPanel>
+            <DataGrid x:Name="GrdData" Grid.Row="1"
+                      AutoGenerateColumns="False" SelectionUnit="FullRow"
+                      GridLinesVisibility="Vertical"
+                      Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
+                      ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding UserID}" Header="순번" Width="60" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserIdentityNumber}" Header="사번" Width="120" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserSurname}" Header="성" Width="1*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserName}" Header="이름" Width="1*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserEmail}" Header="이메일" Width="300" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserAdmin}" Header="관리자여부" Width="1*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserActivated}" Header="활성여부" Width="1*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+                     
             </DataGrid>
         </Grid>
         <!--컨텐츠영역 끝-->
