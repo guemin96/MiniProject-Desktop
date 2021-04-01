@@ -85,7 +85,20 @@ namespace WpfSMSApp
             }
             catch (Exception ex)
             {
-                Commons.LOGGER.Error("계정정보 오류");
+                Commons.LOGGER.Error($"예외발생 BtnUser_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private async void Btnstore_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActiveControl.Content = new View.Store.StoreList();
+            }
+            catch (Exception ex)
+            {
+                Commons.LOGGER.Error($"예외발생 Btnstore_Click : {ex}");
                 await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
             }
         }

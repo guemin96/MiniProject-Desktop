@@ -33,5 +33,36 @@ namespace WpfSMSApp.Logic
             }
            
         }
+
+        public static List<Stock> GetStocks()
+        {
+            List<Stock> stocks;
+
+            using (var ctx = new SMSEntities())//ctx = datacontext
+            {
+                stocks = ctx.Stock.ToList();
+            }
+            return stocks;
+        }
+
+        public static List<Store> GetStores()
+        {
+            List<Store> stores;
+
+            using (var ctx = new SMSEntities())//ctx = datacontext
+            {
+                stores = ctx.Store.ToList();
+            }
+            return stores;
+        }
+        public static int SetStores(Store store)
+        {
+            using (var ctx = new SMSEntities())
+            {
+                ctx.Store.AddOrUpdate(store); // 인덱스값이 없는 경우에는 add 인덱스값이 있는 경우에는 update
+                return ctx.SaveChanges();// savechange?는 무슨 함수?
+            }
+
+        }
     }
 }

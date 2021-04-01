@@ -70,7 +70,7 @@
             <Button x:Name="Btnstore" Grid.Column="3" Content="창고"
                     FontSize="20" Foreground="White"
                     Background="CadetBlue"
-                    Margin="5,10">
+                    Margin="5,10" Click="Btnstore_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
