@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -49,6 +50,21 @@ namespace NaverMobieFinderApp.Helper
                 Console.WriteLine($"예외발생 : {ex}");
             }
             return result;
+        }
+
+        public static string StripHtmlTag(string text)
+        {
+            return Regex.Replace(text,@"<(.|\n)*?>","");//HTML 태그 삭제하는 정규표현식
+        }
+        public static string StripPipe(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
+            else
+            
+           return text.Substring(0, text.LastIndexOf("|")).Replace("|", ", ");
+           //string result = text.Replace("|", ", ");
+           //return result.Substring(0, result.LastIndexOf(","));
         }
     }
     

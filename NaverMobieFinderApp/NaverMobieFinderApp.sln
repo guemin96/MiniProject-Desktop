@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaverMobieFinderApp", "NaverMobieFinderApp\NaverMobieFinderApp.csproj", "{1F1B22DE-8A49-42C2-B251-D3A8EF9FFEEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaverMovieFinderApp", "NaverMobieFinderApp\NaverMovieFinderApp.csproj", "{1F1B22DE-8A49-42C2-B251-D3A8EF9FFEEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleNaverMovieFinder", "ConsoleNaverMovieFinder\ConsoleNaverMovieFinder.csproj", "{551C5938-5898-4158-9BE6-E5B19B94A690}"
 EndProject
