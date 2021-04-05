@@ -8,7 +8,7 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:NaverMobieFinderApp"
     mc:Ignorable="d"
-    Title="Naver MovieFinder" Height="550" Width="1020">
+    Title="Naver MovieFinder" Height="550" Width="1020" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconForkAwesome Kind="YoutubeSquare" Margin="5,7,0,0" Foreground="White"/>
@@ -53,8 +53,8 @@
             
         </StackPanel>
         <DataGrid x:Name="GrdData" Grid.Row="2" Grid.Column="1"
-                  AutoGenerateColumns="False" Margin="10" SelectionUnit="FullRow"
-                  GridLinesVisibility="Vertical"
+                  AutoGenerateColumns="False" Margin="10" SelectionUnit="FullRow" 
+                  GridLinesVisibility="Vertical" IsReadOnly="True"
                   Style="{StaticResource MahApps.Styles.DataGrid.Azure}" SelectedCellsChanged="GrdData_SelectedCellsChanged"
                   ItemsSource="{Binding}">
             <!--여기서 바인딩은 MainWindow.xaml.cs에 GrdData.DataContext = movieItems; 이 부분을 통해서 자료를 연결할 수 있다.-->
@@ -64,7 +64,7 @@
                 <DataGridTextColumn Binding="{Binding PubDate}" Header="상영연도" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Director}" Header="감독" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Actor}" Header="배우" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding UserRating}" Header="평점" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding UserRating}" Header="네티즌평점" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <Image x:Name="ImgPoster" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="10" Source="No_Picture.jpg"></Image>
