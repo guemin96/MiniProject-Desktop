@@ -102,5 +102,37 @@ namespace WpfSMSApp
                 await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
             }
         }
+
+        private async void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var result = await DialogManager.ShowMessageAsync(this,"종료","종료하시겠습니까?",MessageDialogStyle.Affirmative,null);
+            if (result == MessageDialogResult.Affirmative)
+            
+            {
+                e.Cancel = false;
+                Environment.Exit(0);
+
+
+            }
+            //var result = await (MetroWindow)
+            //if (result == MessageDialogResult.Affirmative)
+            //{
+            //    e.Cancel = false;
+            //    Environment.Exit(0);
+            //}
+            //else
+            //{
+            //    e.Cancel = true;
+            //}
+            //if (MessageBox.Show(this, "종료하시겠습니까?", "종료", MessageBoxButton.YesNo, MessageBoxImage.Error)==MessageBoxResult.Yes)
+            //    
+            //{
+            //    e.Cancel = false;
+            //    Environment.Exit(0);
+            //}
+            //else
+            //    e.Cancel = true;
+        }
+        
     }
 }
